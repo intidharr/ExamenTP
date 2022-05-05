@@ -35,7 +35,8 @@ class PFEController extends AbstractController
             $manager->flush();
             $this->addFlash('succès', $pfe->getTitle() . "a éte bien ajoutée");
             return $this->render('pfeadd/html.twig', ['pfeTitle' => $pfe->getTitle(),
-                'pfeStudent'=>$pfe->getStudent()]);
+                'pfeStudent'=>$pfe->getStudent(),
+                'pfeEntreprise'=> $pfe->getEntreprise()]);
 
         } else {
 
