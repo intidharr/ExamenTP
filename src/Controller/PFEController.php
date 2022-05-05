@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use App\Form\PFEType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,7 +29,7 @@ class PFEController extends AbstractController
     ): Response
     {$pfe = new PFE();
 
-        $form = $this->createForm(UserType::class, $pfe);
+        $form = $this->createForm(PFEType::class, $pfe);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             $manager->persist($pfe);
